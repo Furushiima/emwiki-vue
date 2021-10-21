@@ -87,6 +87,7 @@ import Vue from 'vue'
 import AccountForm from '@/components/AccountForm.vue'
 import ArticleForm from '@/components/ArticleForm.vue'
 import SymbolForm from '@/components/SymbolForm.vue'
+import SearchTheoremForm from '@/components/SearchTheoremForm.vue'
 import GraphForm from '@/components/GraphForm.vue'
 import ArticleService from '@/services/article-service'
 import SymbolService from '@/services/symbol-service'
@@ -101,6 +102,7 @@ export default Vue.extend({
     AccountForm,
     ArticleForm,
     SymbolForm,
+    SearchTheoremForm,
     GraphForm
   },
 
@@ -108,7 +110,7 @@ export default Vue.extend({
     drawer: null,
     navWidth: 300,
     subDrawer: 'search',
-    searchForms: [{ text: 'Article', value: 'ArticleForm' }, { text: 'Symbol', value: 'SymbolForm' }, { text: 'Theorem/Definition', value: 'TheoremForm' }],
+    searchForms: [{ text: 'Article', value: 'ArticleForm' }, { text: 'Symbol', value: 'SymbolForm' }, { text: 'Theorem/Definition', value: 'SearchTheoremForm' }],
     currentSearchForm: 'ArticleForm',
     menus: [
       { title: 'Index', icon: 'mdi-web', url: '/' },
@@ -159,7 +161,7 @@ export default Vue.extend({
       }
     },
     currentSearchForm (newVal, oldVal) {
-      if (newVal === 'TheoremForm') {
+      if (newVal === 'SearchTheoremForm') {
         this.navWidth = 800
       } else {
         this.navWidth = 300

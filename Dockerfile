@@ -7,7 +7,7 @@ RUN apt-get -y update && \
     apt-get -y upgrade && \
     apt-get -y install cmake libpq-dev python3-dev libssl-dev libffi-dev pbzip2 graphviz nodejs npm && \
     npm install -g @vue/cli && \
-    npm install -g axios vue-axios
+    npm install -g axios vue-axios && \
     python -m pip install --upgrade pip && \
     pip -q install pipenv --upgrade
 
